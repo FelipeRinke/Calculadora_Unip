@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Unip</title>
+    <link rel="stylesheet" href="../Media_Unip/src/css/Style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Calular Média Unip</h1>
+    <h3>Digite NP1: <input id="np1" type="number"></h3>
+    <h3>Digite NP2: <input id="np2" type="number"></h3>
+    <h3>Digite PIM: <input id="pim" type="number"></h3>
+    <button class="calculo" onclick="media()"><h3>Calcular Média</h3></button>
+    <br>
+
+    <script>
+
+        function media(){
+            var np1 = parseFloat(document.getElementById("np1").value);
+            var np2 = parseFloat(document.getElementById("np2").value);
+            var pim = parseFloat(document.getElementById("pim").value);
+
+            var media = ((np1 * 4 + np2 * 4 + pim * 2)/10)
+            
+
+            if(media >= 7)
+            alert("Aprovado, Parabéns, Nota: " +media)
+            else
+            alert("Reprovado, Fazer Exame, Nota: " +media)
+
+        }
+
+
+
+    </script>
+</div>  
+
+    
+</body>
+</html>
