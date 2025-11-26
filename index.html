@@ -26,16 +26,21 @@
             // Cálculo da Média Ponderada
             var media = ((np1 * 4 + np2 * 4 + pim * 2)/10);
             
-            // Calcula a nota necessária no exame (10.0 - Média)
+            // A nota necessária no exame, em pontos (de 0 a 10)
             var notaExame = 10 - media; 
 
-            if(media >= 6.75)
+            if(media > 6.75) // Critério de aprovação direta (maior que 6.75)
                 alert("Aprovado, Parabéns! Média: " + media.toFixed(2));
-            else
-                // CORRIGIDO: Usando o + para concatenar corretamente e toFixed(2) para formatar
-                alert("Fazer Exame. Média: " + media.toFixed(2) + 
-                    "\nVocê precisa de " + notaExame.toFixed(2) + " no Exame para ser Aprovado!");
+            else {
+                // Se a notaExame for negativa, significa que a média é maior que 10. Ajustamos para 0.
+                if (notaExame < 0) {
+                    notaExame = 0;
+                }
 
+                // Informa a pontuação necessária no exame (número de acertos)
+                alert("Fazer Exame. Média: " + media.toFixed(2) + 
+                    "\nVocê precisa ACERTAR pelo menos " + Math.ceil(notaExame) + " questões (pontos) no Exame!");
+            }
         }
 
 
@@ -46,6 +51,7 @@
     
 </body>
 </html>
+
 
 
 
