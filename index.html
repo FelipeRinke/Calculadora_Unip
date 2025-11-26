@@ -19,19 +19,24 @@
     <script>
 
         function media(){
-            var np1 = parseFloat(document.getElementById("np1").value);
-            var np2 = parseFloat(document.getElementById("np2").value);
-            var pim = parseFloat(document.getElementById("pim").value);
+            var np1 = parseFloat(document.getElementById("np1").value);
+            var np2 = parseFloat(document.getElementById("np2").value);
+            var pim = parseFloat(document.getElementById("pim").value);
 
-            var media = ((np1 * 4 + np2 * 4 + pim * 2)/10)
-            
+            // Cálculo da Média Ponderada
+            var media = ((np1 * 4 + np2 * 4 + pim * 2)/10);
+            
+            // Calcula a nota necessária no exame (10.0 - Média)
+            var notaExame = 10 - media; 
 
-            if(media >= 6.75)
-            alert("Aprovado, Parabéns, Nota: " +media)
-            else
-            alert("Fazer Exame, Nota: " + media + "Some até dar 10 q vai ser nota que vc precisa no exame!!")
+            if(media >= 6.75)
+                alert("Aprovado, Parabéns! Média: " + media.toFixed(2));
+            else
+                // CORRIGIDO: Usando o + para concatenar corretamente e toFixed(2) para formatar
+                alert("Fazer Exame. Média: " + media.toFixed(2) + 
+                    "\nVocê precisa de " + notaExame.toFixed(2) + " no Exame para ser Aprovado!");
 
-        }
+        }
 
 
 
@@ -41,6 +46,7 @@
     
 </body>
 </html>
+
 
 
 
