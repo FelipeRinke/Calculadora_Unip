@@ -1,22 +1,95 @@
-body{
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #292929;
+/* Definições de Fundo e Tipografia */
+body {
+    /* Mantendo seu modo escuro, mas melhorando a cor de fundo */
+    background-color: #1e1e1e; 
+    color: #f0f0f0; /* Branco suave para contraste */
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    margin: 0;
 }
 
-.container{
-    display: flex;
+/* Container Principal - Estilização e Centralização */
+.container {
+    background-color: #2a2a2a; /* Fundo do container levemente mais claro que o body */
+    padding: 40px;
+    border-radius: 15px; /* Cantos mais arredondados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra forte para destacar */
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    
+    /* Layout dos elementos (mantendo sua configuração original) */
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-input{
-    border-radius: 10px;
-    width: 50px;
+/* Título */
+h1 {
+    color: #4CAF50; /* Verde vibrante para o título */
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8em;
+    border-bottom: 2px solid #3a3a3a; /* Linha sutil de separação */
+    padding-bottom: 10px;
 }
 
-.calculo{
-    border-radius: 30px;
+/* Subtítulos (Onde estão os inputs) */
+h3 {
+    color: #cccccc;
+    font-size: 1em;
+    margin: 15px 0 10px;
+    display: flex;
+    justify-content: space-between; /* Distribui o texto e o input */
+    align-items: center;
+    width: 100%; /* Ocupa a largura total do container */
+    padding: 0 5px;
 }
-    
+
+/* Estilo dos Campos de Entrada (Inputs) */
+input[type="number"] {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    padding: 8px;
+    border: 1px solid #555555;
+    border-radius: 8px; /* Cantos arredondados */
+    width: 60px; /* Um pouco mais largo para melhor toque */
+    text-align: center;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50; /* Borda verde ao focar */
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Estilo do Botão de Cálculo */
+.calculo {
+    background-color: #4CAF50; /* Verde como cor de destaque */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px; /* Mantendo seu estilo arredondado */
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.calculo:hover {
+    background-color: #45a049; /* Verde levemente mais escuro no hover */
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.calculo:active {
+    transform: translateY(1px); /* Pequeno efeito de clique */
+}
