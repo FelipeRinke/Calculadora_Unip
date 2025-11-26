@@ -23,23 +23,25 @@
             var np2 = parseFloat(document.getElementById("np2").value);
             var pim = parseFloat(document.getElementById("pim").value);
 
-            // Cálculo da Média Ponderada
+            // Cálculo da Média Semestral (Ponderada 4, 4, 2)
             var media = ((np1 * 4 + np2 * 4 + pim * 2)/10);
             
-            // A nota necessária no exame, em pontos (de 0 a 10)
-            var notaExame = 10 - media; 
+            // Nota necessária para que Média + Exame > 9.5 (ou seja, MF > 4.75)
+            var notaExameNecessaria = 9.5 - media; 
 
-            if(media > 6.75) // Critério de aprovação direta (maior que 6.75)
-                alert("Aprovado, Parabéns! Média: " + media.toFixed(2));
-            else {
-                // Se a notaExame for negativa, significa que a média é maior que 10. Ajustamos para 0.
-                if (notaExame < 0) {
-                    notaExame = 0;
+            if(media > 6.75) { // Aprovação direta (acima de 6.75)
+                alert("APROVADO POR MÉDIA, Parabéns! Média: " + media.toFixed(2));
+            } else {
+                // Garante que a nota necessária não seja inferior a 0 (impossível)
+                if (notaExameNecessaria <= 0) {
+                    alert("APROVADO POR MÉDIA, Parabéns! Média: " + media.toFixed(2));
+                } else if (notaExameNecessaria > 10) {
+                    alert("REPROVADO POR NOTA. Média: " + media.toFixed(2) + ". Você precisaria de mais de 10.0 no Exame para aprovar.");
+                } else {
+                    // Informa a pontuação (acertos) mínima necessária (arredondado para cima)
+                    alert("Fazer Exame. Média: " + media.toFixed(2) + 
+                          "\nVocê precisa ACERTAR pelo menos " + Math.ceil(notaExameNecessaria) + " questões (pontos) no Exame para atingir MF > 4.75!");
                 }
-
-                // Informa a pontuação necessária no exame (número de acertos)
-                alert("Fazer Exame. Média: " + media.toFixed(2) + 
-                    "\nVocê precisa ACERTAR pelo menos " + Math.ceil(notaExame) + " questões (pontos) no Exame!");
             }
         }
 
@@ -51,6 +53,7 @@
     
 </body>
 </html>
+
 
 
 
